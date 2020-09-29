@@ -31,11 +31,16 @@
 
 
 				<!-- our chosen database (as indicated in persistence.xml) -->
-				<dependency>
+				<!-- <dependency>
 						<groupId>com.h2database</groupId>
 						<artifactId>h2</artifactId>
 						<version>1.4.200</version>
-				</dependency>
+				</dependency> -->
+                <dependency>
+                    <groupId>org.apache.derby</groupId>
+                    <artifactId>derby</artifactId>
+                    <version>10.14.2.0</version>
+                </dependency>
 
 				<!-- JAXB used to be provided (until java8) but needs to be included -->
 				<dependency>
