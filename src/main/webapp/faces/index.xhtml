@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<title>JSF running in a normal servlet container</title>
@@ -11,14 +12,29 @@
 	<h2>Is JSF working?</h2>
 	<p>Message from the testBean: <h:outputText value="#{testBean.message}" /></p>
 	<p>The testBean says it is: <h:outputText value="#{testBean.serverTime}"/></p>
-	<p>DataStore is <h:outputText value="#{dataStore}"/> with content:
-		<h:outputText value="#{dataStore.pojos}"/></p>
+
+	<hr/>
+
+
+	<h1>DataStore View</h1>
+	<p:dataTable var="pojo" value="#{dataStore.readDataLazyModel()}" paginator="true" rows="10"
+				 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				 rowsPerPageTemplate="5,10,100" id="pojoTable" lazy="true">
+		<p:column headerText="Id">
+			<h:outputText value="#{pojo.id}" />
+		</p:column>
+		<p:column headerText="Text">
+			<h:outputText value="#{pojo.text}"/>
+		</p:column>
+	</p:dataTable>
+
 
 	<hr/>
 
 	<h2>Servlet-Mapping ok?</h2>
-	<p>Trying paths of pictures:</p>
-	<p>SVG: <img src="../areyoulucky.svg" style="width:200px"></img></p>
-	<p>PNG: <img src="../areyoulucky.png" style="width:200px"></img></p>
+	<p>Trying paths of static pictures:
+		 SVG: <img src="../areyoulucky.svg" style="width:200px"/>
+		 PNG: <img src="../areyoulucky.png" style="width:200px"/>
+	</p>
 </h:body>
 </html>

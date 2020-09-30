@@ -5,24 +5,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Pojo1 {
+public class Pojo {
 
-    public Pojo1() {}
+    public Pojo() {}
 
-    private String attr;
+    private String text;
 
     @Id
     @GeneratedValue
     private int id;
 
-    public void setAttr(String a) { this.attr = a; }
-    public String getAttr() { return attr; }
+    public void setText(String a) { this.text = a; }
+    public String getText() { return text; }
 
     public void setId(int i) { this.id = i; }
     public int getId() { return id;}
 
     public String toString() {
-        return "Pojo " + id + " : \"" + attr + "\".";
+        return "Pojo " + id + " : \"" + text + "\".";
     }
 
 }
