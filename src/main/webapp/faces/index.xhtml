@@ -15,9 +15,8 @@
 
 	<hr/>
 
-
 	<h1>DataStore View</h1>
-	<p:dataTable var="pojo" value="#{dataStore.readDataLazyModel()}" paginator="true" rows="10"
+	<p:dataTable var="pojo" value="#{dataStore.lazyModel}" paginator="true" rows="10"
 				 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
 				 rowsPerPageTemplate="5,10,100" id="pojoTable" lazy="true">
 		<p:column headerText="Id">

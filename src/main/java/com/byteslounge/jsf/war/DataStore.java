@@ -132,4 +132,6 @@ public class DataStore {
         };
     }
 
+    public LazyDataModel<Pojo> getLazyModel() { return readDataLazyModel(); }
+
 }
